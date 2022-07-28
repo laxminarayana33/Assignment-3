@@ -136,6 +136,24 @@ app.controller('myCtrl', function ($scope) {
    }
  
   }
+
+  $scope.total = 0;
+  $scope.setTotals = function(cart) {
+    if(cart){
+      $scope.total += cart.price;
+       console.log($scope.total)
+    }
+    
+  }
+
+  $scope.remove = function(cart){
+    if(cart){
+      $scope.foundList.splice($scope.foundList.indexOf(cart),1);
+      // $scope.total -= cart.price;
+    }
+  }
+
+
  
 });
 
